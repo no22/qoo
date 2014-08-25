@@ -43,7 +43,7 @@ cat instanceof Cat;  // true
 cat instanceof Animal;  // true
 ```
 
-### Mix-in modules:modules
+### Mix-in modules:
 
 ```javascript
 function Runnable($super) {
