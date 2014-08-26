@@ -10,7 +10,7 @@ Usage
 
 ```javascript
 var Animal = qoo.class({
-  constructor: function(name, legs) {
+  constructor: function Animal(name, legs) {
     this.name = name;
     this.legs = legs;
   },
@@ -28,7 +28,7 @@ animal.toString();  // "Annie has 2 legs."
 ```javascript
 var Cat = qoo.class(Animal, function($super) {
   return {
-    constructor: function(name) {
+    constructor: function Cat(name) {
       $super.constructor.call(this, name, 4);
     },
     toString: function() {
