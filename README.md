@@ -1,7 +1,7 @@
 qoo.js
 ======================================================================
 
-qoo.js is a small, simple, and clean javascript(ES5) oop library.
+Qoo.js is a small, simple, and clean javascript(ES5) oop (classical inheritance) library.
 
 Usage
 ----------------------------------------------------------------------
