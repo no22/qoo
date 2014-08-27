@@ -41,11 +41,12 @@
         classExtend: function(obj) {
             return this._extend(obj._super_ ? obj._super_.constructor : undefined, obj, slice.call(arguments, 1));
         },
+        _inherit: function(child, proto) {
+            child.prototype = Object.create(proto, {constructor: {value: child, enumerable: false, writable: true, configurable: true }});
+        },
         inherit: function(child, parent) {
             var proto = parent != null ? parent.prototype : null;
-            child.prototype = Object.create(proto, {
-                constructor: { value: child, enumerable: false, writable: true, configurable: true }
-            });
+            this._inherit(child, proto);
             if (arguments.length > 2) {
                 this._extend(proto, child.prototype, slice.call(arguments, 2));
             }
