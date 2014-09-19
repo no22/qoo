@@ -9,7 +9,7 @@ Usage
 ### Define a class:
 
 ```javascript
-var Animal = qoo.class({
+var Animal = qoo.Base.extend({
   constructor: function Animal(name, legs) {
     this.name = name;
     this.legs = legs;
@@ -26,7 +26,7 @@ animal.toString();  // "Annie has 2 legs."
 ### Define a sub-class:
 
 ```javascript
-var Cat = qoo.class(Animal, function($super) {
+var Cat = Animal.extend(function($super) {
   return {
     constructor: function Cat(name) {
       $super.constructor.call(this, name, 4);
@@ -54,7 +54,7 @@ function Runnable($super) {
   };
 }
 
-qoo.extend(Cat, Runnable);
+Cat.mixin(Runnable);
 
 var cat = new Cat("Kitty");
 cat.run();  // "Kitty runs."
@@ -66,7 +66,7 @@ cat.run();  // "Kitty runs."
 ```javascript
 var cat = new Cat("Kitty");
 
-qoo.extend(cat, function($super) {
+cat.extend(function($super) {
   return {
     barks: function() {
       return "Meow";
